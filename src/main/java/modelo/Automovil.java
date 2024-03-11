@@ -1,13 +1,10 @@
 package modelo;
 
 public class Automovil extends Vehiculo{
-
-    //atributos
     private int cantidadPuertas;
     private double tamanoMotor;
     private double potencia;
 
-    //constructor
     public Automovil(String marca, String modelo, int anioFabricacion, double pesoVehiculo, double precioVehiculo, int stockVehiculo, double potenciaVehiculo, String codigoVehiculo, int cantidadPuertas, double tamanoMotor, double potencia) {
         super(marca, modelo, anioFabricacion, pesoVehiculo, precioVehiculo, stockVehiculo, potenciaVehiculo, codigoVehiculo);
         this.cantidadPuertas = cantidadPuertas;
@@ -15,7 +12,6 @@ public class Automovil extends Vehiculo{
         this.potencia = potencia;
     }
 
-    //getters y setters
     public int getCantidadPuertas() {
         return cantidadPuertas;
     }
