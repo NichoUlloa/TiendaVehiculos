@@ -8,8 +8,6 @@ public abstract class Vehiculo {
     private double pesoVehiculo;
     private double precioVehiculo;
     private int stockVehiculo;
-
-    private double potenciaVehiculo;
     private String codigoVehiculo;
 
     //constructor
@@ -20,7 +18,6 @@ public abstract class Vehiculo {
         this.pesoVehiculo = pesoVehiculo;
         this.precioVehiculo = precioVehiculo;
         this.stockVehiculo = stockVehiculo;
-        this.potenciaVehiculo = potenciaVehiculo;
         this.codigoVehiculo = codigoVehiculo;
     }
 
@@ -43,9 +40,6 @@ public abstract class Vehiculo {
     public int getStockVehiculo() {
         return stockVehiculo;
     }
-    public double getPotenciaVehiculo() {
-        return potenciaVehiculo;
-    }
     public String getCodigoVehiculo() {
         return codigoVehiculo;
     }
@@ -67,9 +61,6 @@ public abstract class Vehiculo {
     public void setStockVehiculo(int stockVehiculo) {
         this.stockVehiculo = stockVehiculo;
     }
-    public void setPotenciaVehiculo(double potenciaVehiculo) {
-        this.potenciaVehiculo = potenciaVehiculo;
-    }
     public void setCodigoVehiculo(String codigoVehiculo) {
         this.codigoVehiculo = codigoVehiculo;
     }
@@ -78,9 +69,6 @@ public abstract class Vehiculo {
 
     public abstract calcularVelocidadMaxima();
 
-    @Override
-    public String toString() {
-        return "Vehiculo{" + "marca=" + marca + ", modelo=" + modelo + ", anioFabricacion=" + anioFabricacion + ", pesoVehiculo=" + pesoVehiculo + ", precioVehiculo=" + precioVehiculo + ", stockVehiculo=" + stockVehiculo + ", potenciaVehiculo=" + potenciaVehiculo + ", codigoVehiculo=" + codigoVehiculo + '}';
-    }
+    public abstract  String toString();
 
 }

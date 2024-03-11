@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fac6502-957f-49c6-8d83-813eacbaf0d5" name="Changes" comment="Creacion de primeras clases y sus constructores">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/Automovil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/Bicicleta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/Motocicleta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/Tienda.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelo/Vehiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Automovil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Automovil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Bicicleta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Bicicleta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Motocicleta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Motocicleta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Vehiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Vehiculo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -49,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Nico",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -69,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710158228180</updated>
-      <workItem from="1710158229414" duration="2180000" />
+      <workItem from="1710158229414" duration="3974000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion de primeras clases y sus constructores">
       <option name="closed" value="true" />
@@ -79,7 +77,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710160421911</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creacion de primeras clases y sus constructores">
+      <option name="closed" value="true" />
+      <created>1710160447015</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710160447016</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Creacion de primeras clases y sus constructores">
+      <option name="closed" value="true" />
+      <created>1710160480275</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710160480275</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
