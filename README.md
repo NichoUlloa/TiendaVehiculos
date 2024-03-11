@@ -8,7 +8,7 @@
 - Motocicleta
 - Bicicleta
 ## Diagrama de clases UML:
-![TiendaVehiculos.png](TiendaVehiculos.png)
+![TiendaVehiculos](https://github.com/NichoUlloa/TiendaVehiculos/assets/145157325/2311f3e3-e7ea-4963-86a6-b80c42df236b)
 
 
 
