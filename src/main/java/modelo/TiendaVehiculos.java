@@ -1,21 +1,30 @@
 package modelo;
 
-public class TiendaVehiculos {
-    String nombreTienda;
-    String direccionTienda;
-    Vehiculo[] catalogoVehiculos;
-    Cliente[] listaClientes;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-    public TiendaVehiculos(String nombreTienda, String direccionTienda, Vehiculo[] catalogoVehiculos, Cliente[] listaClientes) {
+public class TiendaVehiculos {
+    // Atributos
+    private String nombreTienda, direccionTienda;
+    private List<Vehiculo> catalogoVehiculos;
+    private List<Cliente> listaClientes;
+    //carritoCompras
+    private List<Vehiculo> carritoCompras = new ArrayList<>();
+
+    // Constructor
+    public TiendaVehiculos(String nombreTienda, String direccionTienda) {
         this.nombreTienda = nombreTienda;
         this.direccionTienda = direccionTienda;
-        this.catalogoVehiculos = catalogoVehiculos;
-        this.listaClientes = listaClientes;
+        this.catalogoVehiculos = new ArrayList<>();
+        this.listaClientes = new ArrayList<>();
     }
 
+    // Getters y Setters
     public String getNombreTienda() {
         return nombreTienda;
     }
+
     public void setNombreTienda(String nombreTienda) {
         this.nombreTienda = nombreTienda;
     }
@@ -23,107 +32,143 @@ public class TiendaVehiculos {
     public String getDireccionTienda() {
         return direccionTienda;
     }
+
     public void setDireccionTienda(String direccionTienda) {
         this.direccionTienda = direccionTienda;
     }
 
-    public Vehiculo[] getCatalogoVehiculos() {
+    public List<Vehiculo> getCatalogoVehiculos() {
         return catalogoVehiculos;
     }
-    public void setCatalogoVehiculos(Vehiculo[] catalogoVehiculos) {
+
+    public void setCatalogoVehiculos(List<Vehiculo> catalogoVehiculos) {
         this.catalogoVehiculos = catalogoVehiculos;
     }
 
-    public Cliente[] getListaClientes() {
+    public List<Cliente> getListaClientes() {
         return listaClientes;
     }
-    public void setListaClientes(Cliente[] listaClientes) {
+
+    public void setListaClientes(List<Cliente> listaClientes) {
         this.listaClientes = listaClientes;
     }
 
-    public void agregarVehiculo(Vehiculo vehiculo){
-        for (int i = 0; i < catalogoVehiculos.length; i++) {
-            if (catalogoVehiculos[i] == null) {
-                catalogoVehiculos[i] = vehiculo;
-                break;
+    public List<Vehiculo> getCarritoCompras() {
+        return carritoCompras;
+    }
+
+    public void setCarritoCompras(List<Vehiculo> carritoCompras) {
+        this.carritoCompras = carritoCompras;
+    }
+
+    // Métodos
+
+    // Método registrarCliente
+    public void registrarCliente(Cliente cliente) {
+        listaClientes.add(cliente);
+    }
+
+    // Método eliminarCliente
+    public void eliminarCliente(Cliente cliente) {
+        listaClientes.remove(cliente);
+    }
+
+    // Método buscarCliente en la lista de clientes, si no se encuentra retorna mensaje de no se encontró
+    public Cliente buscarCliente(String runCliente) {
+        for (Cliente cliente : listaClientes) {
+            if (cliente.getRunCliente().equals(runCliente)) {
+                return cliente;
             }
+        }
+        return null;
+    }
+
+    // Metodo agregarVehiculo
+    public void agregarVehiculo(Vehiculo vehiculo) {
+        catalogoVehiculos.add(vehiculo);
+    }
+
+    // Método eliminarVehiculo
+    public void eliminarVehiculo(Vehiculo vehiculo) {
+        catalogoVehiculos.remove(vehiculo);
+    }
+
+
+    // Método buscarVehiculoMarca
+    public Vehiculo buscarVehiculoMarca(String marca) {
+        for (Vehiculo vehiculo : catalogoVehiculos) {
+            if (vehiculo.getMarca().equals(marca)) {
+                return vehiculo;
+            }
+        }
+        return null;
+    }
+
+    // Método buscarVehiculoModelo
+    public Vehiculo buscarVehiculoModelo(String modelo) {
+        for (Vehiculo vehiculo : catalogoVehiculos) {
+            if (vehiculo.getModelo().equals(modelo)) {
+                return vehiculo;
+            }
+        }
+        return null;
+    }
+
+    // Método buscarVehiculoTipo
+    public Vehiculo buscarVehiculoTipo(String tipo) {
+        for (Vehiculo vehiculo : catalogoVehiculos) {
+            if (vehiculo.getTipoVehiculo().equals(tipo)) {
+                return vehiculo;
+            }
+        }
+        return null;
+    }
+
+
+    // Metodo mostrarCatalogoVehiculos
+    public String mostrarCatalogoVehiculos() {
+        String catalogo = "";
+        for (Vehiculo vehiculo : catalogoVehiculos) {
+            catalogo += vehiculo.toString() + "\n";
+        }
+        return catalogo;
+    }
+
+    // Metodo agregarVehiculoAlCarrito
+    public void agregarVehiculoAlCarrito(Cliente cliente, Vehiculo vehiculo) {
+        carritoCompras.add(vehiculo);
+    }
+
+    // Metodo eliminarVehiculoDelCarrito
+    public void eliminarVehiculoDelCarrito(Cliente cliente, Vehiculo vehiculo) {
+        carritoCompras.remove(vehiculo);
+    }
+
+    // Método mostrarCarritoCompras
+    public void mostrarCarritoCompras(Cliente cliente) {
+        System.out.println("Carrito de Compras:");
+        for (Vehiculo vehiculo : carritoCompras) {
+            System.out.println(vehiculo.toString());
         }
     }
 
-    public void eliminarVehiculo(String codigoVehiculo){
-        for (int i = 0; i < catalogoVehiculos.length; i++) {
-            if (catalogoVehiculos[i] != null) {
-                if (catalogoVehiculos[i].getCodigoVehiculo().equals(codigoVehiculo)) {
-                    catalogoVehiculos[i] = null;
-                    break;
-                }
-            }
+    // Método realizarCompra entregando el total de la compra, la dirección de envío y el método de pago por parametro igual se ingresa el tipo de vehiculo
+    public void realizarCompra(Cliente cliente, String metodoPago, String direccionEnvio) {
+        double totalCompra = 0;
+        for (Vehiculo vehiculo : carritoCompras) {
+            totalCompra += vehiculo.getPrecioVehiculo();
         }
-    }
-
-    public void mostrarCatalogoVehiculos(){
-        for (int i = 0; i < catalogoVehiculos.length; i++) {
-            if (catalogoVehiculos[i] != null) {
-                System.out.println(catalogoVehiculos[i].toString());
-            }
+        System.out.println("Total de la compra: " + totalCompra);
+        System.out.println("Dirección de envío: " + direccionEnvio);
+        System.out.println("Método de pago: " + metodoPago);
+        // mostrar lo que se compró
+        System.out.println("Vehículos comprados:");
+        for (Vehiculo vehiculo : carritoCompras) {
+            System.out.println(vehiculo.toString());
         }
-    }
-
-    public void registrarCliente(String run, String nombre, String apellido, String direccion, String metodoPago){
-        for (int i = 0; i < listaClientes.length; i++) {
-            if (listaClientes[i] == null) {
-                listaClientes[i] = new Cliente(run, nombre, apellido, direccion, metodoPago);
-                break;
-            }
+        for (Vehiculo vehiculo : carritoCompras) {
+            vehiculo.setStockVehiculo(vehiculo.getStockVehiculo() - 1);
         }
-    }
-
-    public void realizarVenta(String codigoVehiculo, String run, String direccion, String metodoPago){
-        Cliente cliente = null;
-        Vehiculo vehiculo = null;
-        for (int i = 0; i < listaClientes.length; i++) {
-            if (listaClientes[i] != null) {
-                if (listaClientes[i].getRun().equals(run)) {
-                    cliente = listaClientes[i];
-                    break;
-                }
-            }
-        }
-        for (int i = 0; i < catalogoVehiculos.length; i++) {
-            if (catalogoVehiculos[i] != null) {
-                if (catalogoVehiculos[i].getCodigoVehiculo().equals(codigoVehiculo)) {
-                    vehiculo = catalogoVehiculos[i];
-                    break;
-                }
-            }
-        }
-        if (cliente != null && vehiculo != null) {
-            if (cliente.verificarStock(vehiculo)) {
-                cliente.agregarVehiculoCarrito(vehiculo);
-                System.out.println("Venta realizada con éxito");
-                System.out.println("Subtotal: " + cliente.calcularSubtotal());
-            } else {
-                System.out.println("Vehiculo no disponible");
-            }
-        } else {
-            System.out.println("Cliente o vehiculo no encontrado");
-        }
-    }
-
-    public void mostrarDetalleVehiculo(String codigoVehiculo){
-        for (int i = 0; i < catalogoVehiculos.length; i++) {
-            if (catalogoVehiculos[i] != null) {
-                if (catalogoVehiculos[i].getCodigoVehiculo().equals(codigoVehiculo)) {
-                    System.out.println(catalogoVehiculos[i].toString());
-                    return;
-                }
-            }
-        }
-        System.out.println("Vehiculo no encontrado");
-    }
-
-    @Override
-    public String toString() {
-        return "TiendaVehiculos{" + "nombreTienda=" + nombreTienda + ", direccionTienda=" + direccionTienda + '}';
+        carritoCompras.clear();
     }
 }
