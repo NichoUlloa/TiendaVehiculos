@@ -1,86 +1,90 @@
 package modelo;
 
 public abstract class Vehiculo {
-    //atributos
-    private String marca;
-    private String modelo;
-    private int anioFabricacion;
-    private double pesoVehiculo;
-    private double precioVehiculo;
-    private int stockVehiculo;
+    // Atributos
+    private String marca, modelo, codigoVehiculo;
+    private int anioFabricacion, stockVehiculo;
+    private double pesoVehiculo, precioVehiculo;
 
-    private double potenciaVehiculo;
-    private String codigoVehiculo;
-
-    //constructor
-    public Vehiculo(String marca, String modelo, int anioFabricacion, double pesoVehiculo, double precioVehiculo, int stockVehiculo, double potenciaVehiculo, String codigoVehiculo) {
+    // Constructor
+    public Vehiculo(String marca, String modelo, String codigoVehiculo, int anioFabricacion, int stockVehiculo, double pesoVehiculo, double precioVehiculo) {
         this.marca = marca;
         this.modelo = modelo;
+        this.codigoVehiculo = codigoVehiculo;
         this.anioFabricacion = anioFabricacion;
+        this.stockVehiculo = stockVehiculo;
         this.pesoVehiculo = pesoVehiculo;
         this.precioVehiculo = precioVehiculo;
-        this.stockVehiculo = stockVehiculo;
-        this.potenciaVehiculo = potenciaVehiculo;
-        this.codigoVehiculo = codigoVehiculo;
     }
 
-    //getters y setters
+    // Getters y Setters
     public String getMarca() {
         return marca;
-    }
-    public String getModelo() {
-        return modelo;
-    }
-    public int getAnioFabricacion() {
-        return anioFabricacion;
-    }
-    public double getPesoVehiculo() {
-        return pesoVehiculo;
-    }
-    public double getPrecioVehiculo() {
-        return precioVehiculo;
-    }
-    public int getStockVehiculo() {
-        return stockVehiculo;
-    }
-    public double getPotenciaVehiculo() {
-        return potenciaVehiculo;
-    }
-    public String getCodigoVehiculo() {
-        return codigoVehiculo;
     }
     public void setMarca(String marca) {
         this.marca = marca;
     }
+
+    public String getModelo() {
+        return modelo;
+    }
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    public void setAnioFabricacion(int anioFabricacion) {
-        this.anioFabricacion = anioFabricacion;
-    }
-    public void setPesoVehiculo(double pesoVehiculo) {
-        this.pesoVehiculo = pesoVehiculo;
-    }
-    public void setPrecioVehiculo(double precioVehiculo) {
-        this.precioVehiculo = precioVehiculo;
-    }
-    public void setStockVehiculo(int stockVehiculo) {
-        this.stockVehiculo = stockVehiculo;
-    }
-    public void setPotenciaVehiculo(double potenciaVehiculo) {
-        this.potenciaVehiculo = potenciaVehiculo;
+
+    public String getCodigoVehiculo() {
+        return codigoVehiculo;
     }
     public void setCodigoVehiculo(String codigoVehiculo) {
         this.codigoVehiculo = codigoVehiculo;
     }
 
-    //metodos
-
-    public abstract calcularVelocidadMaxima();
-
-    @Override
-    public String toString() {
-        return "Vehiculo{" + "marca=" + marca + ", modelo=" + modelo + ", anioFabricacion=" + anioFabricacion + ", pesoVehiculo=" + pesoVehiculo + ", precioVehiculo=" + precioVehiculo + ", stockVehiculo=" + stockVehiculo + ", potenciaVehiculo=" + potenciaVehiculo + ", codigoVehiculo=" + codigoVehiculo + '}';
+    public int getAnioFabricacion() {
+        return anioFabricacion;
+    }
+    public void setAnioFabricacion(int anioFabricacion) {
+        this.anioFabricacion = anioFabricacion;
     }
 
+    public int getStockVehiculo() {
+        return stockVehiculo;
+    }
+    public void setStockVehiculo(int stockVehiculo) {
+        this.stockVehiculo = stockVehiculo;
+    }
+
+    public double getPesoVehiculo() {
+        return pesoVehiculo;
+    }
+    public void setPesoVehiculo(double pesoVehiculo) {
+        this.pesoVehiculo = pesoVehiculo;
+    }
+
+    public double getPrecioVehiculo() {
+        return precioVehiculo;
+    }
+    public void setPrecioVehiculo(double precioVehiculo) {
+        this.precioVehiculo = precioVehiculo;
+    }
+
+    // Métodos
+    // Metodo calcularVelocidadMaxima
+    public abstract double calcularVelocidadMaxima();
+
+    // Método getTipoVehiculo
+    public abstract String getTipoVehiculo();
+
+
+    // Método toString
+    @Override
+    public String toString() {
+        return "Vehiculo: " + getTipoVehiculo() + "\n" +
+                "Marca: " + marca + "\n" +
+                "Modelo: " + modelo + "\n" +
+                "Código: " + codigoVehiculo + "\n" +
+                "Año de fabricación: " + anioFabricacion + "\n" +
+                "Stock: " + stockVehiculo + "\n" +
+                "Peso: " + pesoVehiculo + " kg\n" +
+                "Precio: " + precioVehiculo + " $\n";
+    }
 }
